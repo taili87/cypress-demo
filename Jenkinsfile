@@ -1,6 +1,12 @@
 pipeline{
     agent any 
     stages{
+           stage('Deployment'){
+             steps{
+               echo 'building the application'
+            }
+           
+        }
 
         stage('Building'){
              steps{
@@ -14,16 +20,6 @@ pipeline{
                 
             }
         }
-
-        stage('Initialize') {
-            step{
-                ansiColor('xterm') {
-                   echo 'beautify'
-                 }
-            }
-           
-               }
-
         stage ('Testing'){
             steps{
               
@@ -31,9 +27,9 @@ pipeline{
             }
         }
 
-        stage('Deploying'){
+        stage('Reports'){
             steps{
-               echo 'starting Deployment'
+               echo 'get test reports'
             }
         }
     }
