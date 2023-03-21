@@ -1,12 +1,5 @@
 pipeline{
     agent any 
-
-    options {
-      buildDiscarder(logRotator(numToKeepStr:'10'))
-      timeout(time: 5, unit: 'MINUTES')
-      ansiColor('xterm')
-}   
-
     stages{
 
         stage('Building'){
@@ -21,6 +14,12 @@ pipeline{
                 
             }
         }
+
+        stage('Initialize') {
+            ansiColor('xterm') {
+               echo 'beautify'
+                 }
+               }
 
         stage ('Testing'){
             steps{
