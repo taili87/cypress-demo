@@ -5,11 +5,7 @@ pipeline{
         pollSCM '*/5 * * * *'
     }
    
-    parameters{
-        string (name: 'SPEC', defaultValue: "cypress/integration/**/**", description:"Enter the scripts path you want to execute")
-        choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description:"Choice of browser you want to use to execute the scripts")
-    }
-    
+
 
     stages{
         stage('Building'){
@@ -28,7 +24,7 @@ pipeline{
         stage ('Testing'){
             steps{
               
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                bat "npx cypress run"
             }
         }
 
