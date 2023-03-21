@@ -1,0 +1,36 @@
+pipeline{
+    agent{
+        node{
+            label 'Jenkins-agent-goes-here'
+        }
+    }
+
+    stages{
+        stage('Build'){
+            step{
+                echo "Building..."
+                sh '''
+                echo "Doing build stufff..."
+                '''
+            }
+        }
+
+         stage('Tests'){
+            step{
+                echo "Testing application..."
+                sh '''
+                echo "Doing Testing stufff..."
+                '''
+            }
+        }
+
+         stage('Deploy'){
+            step{
+                echo "Deploy..."
+                sh '''
+                echo "Doing deployment stufff..."
+                '''
+            }
+        }
+    }
+}
