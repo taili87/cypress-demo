@@ -4,7 +4,7 @@ pipeline{
     stages{
 
         stage('Pre-Checks') {  
-             timeout(time: 3, unit: 'MINUTES') {
+           step{
              ansiColor('xterm') {
              echo 'Beautify'
         }
