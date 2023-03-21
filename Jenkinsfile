@@ -4,9 +4,9 @@ pipeline{
     triggers{
         pollSCM '*/5 * * * *'
     }
-   
-
-
+       options{
+        ansiColor("xterm")
+    }
     stages{
         stage('Building'){
              steps{
