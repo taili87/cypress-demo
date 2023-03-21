@@ -3,13 +3,6 @@ pipeline{
 
     stages{
 
-        stage('Pre-Checks') {  
-           step{
-             ansiColor('xterm') {
-             echo 'Beautify'
-        }
-    }
-}
         stage('Building'){
              steps{
                echo 'building the application'
