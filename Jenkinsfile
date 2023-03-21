@@ -9,33 +9,33 @@ pipeline{
     stages{
 
          stage('Deployment'){
-            step{
+            'step'{
                 echo "Deployment..."
                 
             }
         }
 
          stage('Pre-build'){
-            step{
+            'step'{
                bat 'npm install'
             }
         }
         stage('Build'){
-            step{
+            'step'{
                 echo "Building..."
                 
             }
         }
 
          stage('Tests'){
-            step{
+            'step'{
                 
                 bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
 
          stage('Test Reports'){
-            step{
+            'step'{
                 echo "Reports..."
                 
             }
