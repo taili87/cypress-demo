@@ -16,9 +16,12 @@ pipeline{
         }
 
         stage('Initialize') {
-            ansiColor('xterm') {
-               echo 'beautify'
+            step{
+                ansiColor('xterm') {
+                   echo 'beautify'
                  }
+            }
+           
                }
 
         stage ('Testing'){
