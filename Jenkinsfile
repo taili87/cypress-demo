@@ -1,16 +1,15 @@
 pipeline{
     agent any 
 
-    triggers{
-        pollSCM '*/1 * * * *'
-    }
-
-    options {
-          buildDiscarder(logRotator(numToKeepStr:'10'))
-          timeout(time: 5, unit: 'MINUTES')
-          ansiColor('xterm')
-}
     stages{
+
+        stage('Pre-Checks') {  
+             timeout(time: 3, unit: 'MINUTES') {
+             ansiColor('xterm') {
+             echo 'Beautify'
+        }
+    }
+}
         stage('Building'){
              steps{
                echo 'building the application'
