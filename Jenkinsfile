@@ -1,5 +1,9 @@
 pipeline{
     agent any 
+
+    triggers{
+        pollSCM '*/5 * * * *'
+    }
    
     parameters{
         string (name: 'SPEC', defaultValue: "cypress/integration/**/**", description:"Enter the scripts path you want to execute")

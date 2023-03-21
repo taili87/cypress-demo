@@ -24,10 +24,12 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("login", (email, password) => {
-
-    cy.visit('https://admin-demo.nopcommerce.com/admin/')
-    cy.get('input[name=Email]').clear().type(email)
-    cy.get('input[name=Password]').clear().type(password)
-    cy.get('input[type=submit]').click()
+Cypress.Commands.add("Login",() => {
+    cy.fixture('login.json').then((data)=>{
+        cy.get(data.emailLocator).clear().type(data.email)
+        cy.get(data.pwdLocator).clear().type(data.password)
+        cy.get(data.loginButtonLocator).click();
+        cy.get(data.loginVerificationLocator).should('be.visible', data.verification);
+    })
+    
 })

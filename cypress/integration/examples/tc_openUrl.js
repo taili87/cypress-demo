@@ -2,12 +2,12 @@
 
 describe('my test suite with Cypress', function () {
     it('tc Verify Title of the Page', function () {
-        cy.visit('https://www.demoqa.com/')
+        cy.visit('https://demoqa.com/')
         cy.title().should('eq', 'ToolsQA')
     })
 
     it('Fill the form', function () {
-        cy.visit('https://www.demoqa.com/text-box')
+        cy.visit('https://demoqa.com/text-box')
         cy.get("#userName").should('be.visible').should('be.enabled').type("Ablaye Modou Thiam")
         cy.get("#userEmail").should('be.visible').should('be.enabled').type("ablaye@gmail.com")
 
@@ -16,7 +16,7 @@ describe('my test suite with Cypress', function () {
     })
 
     it("Check radio button and Select", function () {
-        cy.visit('http://demo.automationtesting.in/Register.html')
+        cy.visit('https://demoqa.com/Register.html')
         cy.get('#checkbox1').check().should('be.checked').and('have.value', 'Cricket')
         cy.get('#checkbox2').check().should('be.checked').and('have.value', 'Movies')
         cy.get('#checkbox3').check().should('be.checked').and('have.value', 'Hockey')
@@ -48,7 +48,7 @@ describe('my test suite with Cypress', function () {
     })
 
     it('Work with Alert', function () {
-        cy.visit('https://www.demoqa.com/alerts')
+        cy.visit('https://demoqa.com/alerts')
         cy.get('#alertButton').click()
 
         cy.on('window:alert', (str) => {
@@ -80,7 +80,7 @@ describe('my test suite with Cypress', function () {
 
     })
 
-    it('Handling Web Table', function () {
+    it.only('Handling Web Table', function () {
         cy.visit('https://testautomationpractice.blogspot.com/')
         //Check value is presence anywhere in the table 
         cy.get('table[name=BookTable]').contains('td', 'Learn Selenium').should('be.visible')

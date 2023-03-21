@@ -1,19 +1,27 @@
-describe('CustomeCommand Suite', function () {
-    it('Login', function () {
-        cy.login('admin@yourstore.com','admin')
-        cy.title().should('be.equal', 'Dashboard / nopCommerce administration')
-    })
 
-    it('Add Customers', function () {
-       cy.login('admin@yourstore.com','admin')
-        cy.title().should('eq', 'Dashboard / nopCommerce administration')
-        //cy.login('admi1n@yourstore.com','admin')
-       // cy.title().should('eq', 'Your store. Login')
+describe('CustomeCommand Suite', ()=> {
+  beforeEach(()=>{
+    cy.visit('https://admin-demo.nopcommerce.com/admin/');
+  })
+    
+    it('Login one', ()=> {
+        cy.Login().then(()=>{
+            cy.log('logging successfully and on the Dashboard!!')
+        });
         
     })
 
-    it('Edit Customer', function () {
-        cy.login('admin@yourstore.com','admin')
-        cy.title().should('eq', 'Dashboard / nopCommerce administration')
+    it('Login two', ()=> {
+        cy.Login().then(()=>{
+            cy.log('logging successfully and on the Dashboard!!')
+        });
+        
+    })
+
+    it('Login Three', ()=> {
+        cy.Login().then(()=>{
+            cy.log('logging successfully and on the Dashboard!!')
+        });
+        
     })
 })
