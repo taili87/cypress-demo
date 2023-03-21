@@ -4,9 +4,12 @@ pipeline{
     triggers{
         pollSCM '*/5 * * * *'
     }
-       options{
-        ansiColor("xterm")
-    }
+
+    options {
+          buildDiscarder(logRotator(numToKeepStr:'10'))
+          timeout(time: 5, unit: 'MINUTES')
+          ansiColor('xterm')
+}
     stages{
         stage('Building'){
              steps{
