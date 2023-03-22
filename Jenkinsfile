@@ -1,9 +1,6 @@
 pipeline{
     agent any 
 
-    ansiColor('css') {
-  sh "ls -al"
-}
     stages{
 
            stage('Deployment'){
